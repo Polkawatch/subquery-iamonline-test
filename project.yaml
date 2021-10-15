@@ -1,0 +1,20 @@
+specVersion: 0.0.1
+description: ''
+repository: ''
+schema: ./schema.graphql
+network:
+  endpoint: wss://polkadot.api.onfinality.io/ws?apikey=ec9800c1-55be-4ffc-bb9e-f80233f4e1b3
+  dictionary: https://api.subquery.network/sq/subquery/dictionary-polkadot
+dataSources:
+  - name: main
+    kind: substrate/Runtime
+    startBlock: 700000
+    mapping:
+      handlers:
+        - handler: handleHeartbeat
+          kind: substrate/EventHandler
+          # Only fetchs blocks if the filter is removed
+          # Event filter as in Subscan... perhaps other spec?
+          filter:
+            module: imonline
+            method: HeartbeatReceived
