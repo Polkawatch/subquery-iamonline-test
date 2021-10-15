@@ -3,5 +3,7 @@ type Heartbeat @entity {
   id: ID! #id is a required field
 
   authorityId: String
+  peerId: String
+  networkAddress: String
 
 }

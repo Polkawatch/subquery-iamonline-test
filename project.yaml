@@ -8,13 +8,13 @@ network:
 dataSources:
   - name: main
     kind: substrate/Runtime
-    startBlock: 700000
+    startBlock: 7265400
     mapping:
       handlers:
         - handler: handleHeartbeat
           kind: substrate/EventHandler
           # Only fetchs blocks if the filter is removed
           # Event filter as in Subscan... perhaps other spec?
-          filter:
-            module: imonline
-            method: HeartbeatReceived
+#          filter:
+#            module: imonline
+#            method: HeartbeatReceived
